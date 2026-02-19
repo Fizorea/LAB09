@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Results</title>
+</head>
+<body>
+  <h1>Search Results for "<%= query %>"</h1>
+
+  <a href="/">Back to Home</a>
+  <a href="/books">View All Books</a>
+
+  <% if (books.length === 0) { %>
+    <p>No matching books found.</p>
+  <% } else { %>
+    <ul>
+      <% books.forEach(book => { %>
+        <li>
+          <strong><%= book.name %></strong>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</body>
+</html>

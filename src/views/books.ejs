@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Books</title>
+</head>
+<body>
+  <h1>All Books</h1>
+
+  <a href="/">Back to Home</a>
+
+  <h2>Add New Book</h2>
+  <form action="/books" method="POST">
+    <input type="text" name="name" placeholder="Book Name" required />
+    <button type="submit">Add Book</button>
+  </form>
+
+  <h2>Book List</h2>
+
+  <% if (books.length === 0) { %>
+    <p>No books available.</p>
+  <% } else { %>
+    <ul>
+      <% books.forEach(book => { %>
+        <li>
+          <strong><%= book.name %></strong>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</body>
+</html>
